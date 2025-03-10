@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FormLayout } from "../FormLayout";
 import { supabase } from "../../config/supabase";
-import { useToast } from "../Toast/useToast";
+import { useToast } from "../../hooks/useToast";
 import { Product, ProductFormProps } from "./types";
 import {
   FormControl,

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../config/supabase";
 import { SiteSettings } from "./types";
-import { useToast } from "../Toast/useToast";
+import { useToast } from "../../hooks/useToast";
 import {
   Container,
   LoadingBox,
@@ -11,7 +11,11 @@ import {
   Button,
 } from "./styles";
 
-export function SettingsForm() {
+interface ISettingsForm {
+  onSuccess: () => void;
+}
+
+export function SettingsForm({ onSuccess }: ISettingsForm) {
   const [loading, setLoading] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
   const { addToast } = useToast();
@@ -63,6 +67,7 @@ export function SettingsForm() {
 
       if (error) throw error;
       addToast("Settings updated successfully", "success");
+      onSuccess();
     } catch (error) {
       console.error("Error:", error);
       addToast("An error occurred while updating settings", "error");

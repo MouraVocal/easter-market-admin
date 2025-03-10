@@ -29,7 +29,8 @@ export function EditProduct() {
       } catch (error) {
         toast({
           title: "Error loading product",
-          description: error instanceof Error ? error.message : "An error occurred",
+          description:
+            error instanceof Error ? error.message : "An error occurred",
           status: "error",
         });
         navigate("/");
@@ -55,10 +56,7 @@ export function EditProduct() {
         Edit Product
       </Heading>
       {product && (
-        <ProductForm
-          product={product}
-          onSuccess={() => navigate("/")}
-        />
+        <ProductForm product={product} onSuccess={() => navigate("/")} />
       )}
     </Container>
   );

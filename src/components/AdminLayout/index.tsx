@@ -11,16 +11,16 @@ import {
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-interface AdminLayoutProps {
+interface AdminLayoutProps extends React.PropsWithChildren {
   tabIndex: number;
-  onTabChange: (index: number) => void;
+  setTabIndex: React.Dispatch<React.SetStateAction<number>>;
   productContent: ReactNode;
   settingsContent: ReactNode;
 }
 
 export function AdminLayout({
   tabIndex,
-  onTabChange,
+  setTabIndex,
   productContent,
   settingsContent,
 }: AdminLayoutProps) {
@@ -29,7 +29,7 @@ export function AdminLayout({
       <Heading mb={[4, 6, 8]} fontSize={["xl", "2xl", "3xl"]}>
         Admin Panel
       </Heading>
-      <Tabs index={tabIndex} onChange={onTabChange}>
+      <Tabs index={tabIndex} onChange={setTabIndex}>
         <TabList>
           <Tab>Products</Tab>
           <Tab>Settings</Tab>

@@ -1,12 +1,8 @@
 import { Box, useToast } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import { AdminLayout } from "./components/AdminLayout";
-import { ProductForm } from "./components/ProductForm";
-import { ProductList } from "./components/ProductList";
-import { SettingsForm } from "./components/SettingsForm";
 import { supabase } from "./config/supabase";
-import { EditProduct } from "./pages/EditProduct";
+import { AuthProvider } from "./contexts/AuthProvider";
+import { AppRoutes } from "./routes";
 import { Product } from "./types";
 
 function AppContent() {
@@ -58,27 +54,24 @@ function AppContent() {
     loadProducts();
   }, []);
 
-  const productContent = (
-    <>
-      <Box>
-        <ProductForm onSuccess={loadProducts} />
-      </Box>
-      <ProductList products={products} onDelete={handleDeleteProduct} />
-    </>
-  );
-
   return (
-    <>
-      <AdminLayout
+    <Box>
+      <AppRoutes
+        products={products}
         tabIndex={tabIndex}
-        onTabChange={setTabIndex}
-        productContent={productContent}
-        settingsContent={<SettingsForm />}
+        setTabIndex={setTabIndex}
+        onDeleteProduct={handleDeleteProduct}
+        onProductSuccess={loadProducts}
       />
-      <Routes>
-        <Route path="/edit/:id" element={<EditProduct />} />
-      </Routes>
-    </>
+    </Box>
+  );
+}
+
+export function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

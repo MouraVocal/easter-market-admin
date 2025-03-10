@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback } from "react";
+import { createContext, useCallback, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 interface Toast {
@@ -98,12 +98,4 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
       </ToastContainer>
     </ToastContext.Provider>
   );
-}
-
-export function useToast() {
-  const context = useContext(ToastContext);
-  if (!context) {
-    throw new Error("useToast must be used within a ToastProvider");
-  }
-  return context;
 }

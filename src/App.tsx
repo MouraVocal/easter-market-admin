@@ -13,8 +13,20 @@ const Box = styled.div`
 
 const Container = styled.div`
   max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: ${({ theme }) => `${theme.space[6]} ${theme.space[8]} ${theme.space[10]}`};
+  padding: ${({ theme }) =>
+    `${theme.space[4]} ${theme.space[4]} ${theme.space[6]}`};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) =>
+      `${theme.space[6]} ${theme.space[6]} ${theme.space[8]}`};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) =>
+      `${theme.space[6]} ${theme.space[8]} ${theme.space[10]}`};
+  }
 `;
 
 const VStack = styled.div`
@@ -32,10 +44,24 @@ const Heading = styled.h1<{ size?: string }>`
 
 const TabContainer = styled.div`
   width: 100%;
+  max-width: 100%;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.radii.xl};
   box-shadow: ${({ theme }) => theme.shadows.lg};
   overflow: hidden;
+`;
+
+const TabPanel = styled.div`
+  padding: ${({ theme }) => theme.space[4]};
+  overflow-x: hidden;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: ${({ theme }) => theme.space[6]};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: ${({ theme }) => theme.space[8]};
+  }
 `;
 
 const TabList = styled.div`
@@ -48,10 +74,14 @@ const Tab = styled.button<{ $isSelected?: boolean }>`
   flex: 1;
   padding: ${({ theme }) => theme.space[4]};
   font-weight: 600;
-  color: ${({ theme, $isSelected }) => $isSelected ? theme.colors.blue[600] : theme.colors.gray[600]};
-  background-color: ${({ $isSelected }) => $isSelected ? "white" : "transparent"};
+  color: ${({ theme, $isSelected }) =>
+    $isSelected ? theme.colors.blue[600] : theme.colors.gray[600]};
+  background-color: ${({ $isSelected }) =>
+    $isSelected ? "white" : "transparent"};
   border: none;
-  border-bottom: 2px solid ${({ theme, $isSelected }) => $isSelected ? theme.colors.blue[600] : "transparent"};
+  border-bottom: 2px solid
+    ${({ theme, $isSelected }) =>
+      $isSelected ? theme.colors.blue[600] : "transparent"};
   margin-bottom: -2px;
   cursor: pointer;
   transition: all 0.2s;
@@ -59,10 +89,6 @@ const Tab = styled.button<{ $isSelected?: boolean }>`
   &:hover {
     color: ${({ theme }) => theme.colors.blue[600]};
   }
-`;
-
-const TabPanel = styled.div`
-  padding: ${({ theme }) => theme.space[8]};
 `;
 
 const SimpleGrid = styled.div<{ $columns: number }>`
@@ -104,16 +130,20 @@ const IconButton = styled.button<{ variant?: string }>`
   justify-content: center;
   padding: ${({ theme }) => theme.space[4]};
   font-size: ${({ theme }) => theme.fontSizes.lg};
-  color: ${({ theme, variant }) => variant === "outline" ? theme.colors.blue[600] : theme.colors.white};
-  background-color: ${({ theme, variant }) => variant === "outline" ? "transparent" : theme.colors.red[500]};
-  border: ${({ theme, variant }) => variant === "outline" ? `1px solid ${theme.colors.blue[600]}` : "none"};
+  color: ${({ theme, variant }) =>
+    variant === "outline" ? theme.colors.blue[600] : theme.colors.white};
+  background-color: ${({ theme, variant }) =>
+    variant === "outline" ? "transparent" : theme.colors.red[500]};
+  border: ${({ theme, variant }) =>
+    variant === "outline" ? `1px solid ${theme.colors.blue[600]}` : "none"};
   border-radius: ${({ theme }) => theme.radii.lg};
   cursor: pointer;
   transition: all 0.2s;
 
   &:hover {
     transform: scale(1.05);
-    background-color: ${({ theme, variant }) => variant === "outline" ? theme.colors.blue[50] : theme.colors.red[600]};
+    background-color: ${({ theme, variant }) =>
+      variant === "outline" ? theme.colors.blue[50] : theme.colors.red[600]};
   }
 `;
 
@@ -177,10 +207,16 @@ function App() {
 
           <TabContainer>
             <TabList>
-              <Tab $isSelected={activeTab === 0} onClick={() => setActiveTab(0)}>
+              <Tab
+                $isSelected={activeTab === 0}
+                onClick={() => setActiveTab(0)}
+              >
                 Produtos
               </Tab>
-              <Tab $isSelected={activeTab === 1} onClick={() => setActiveTab(1)}>
+              <Tab
+                $isSelected={activeTab === 1}
+                onClick={() => setActiveTab(1)}
+              >
                 Configurações
               </Tab>
             </TabList>
@@ -190,7 +226,9 @@ function App() {
                 <VStack>
                   <div>
                     <Heading size="lg" style={{ marginBottom: "1.5rem" }}>
-                      {editingProduct ? "Editar Produto" : "Adicionar Novo Produto"}
+                      {editingProduct
+                        ? "Editar Produto"
+                        : "Adicionar Novo Produto"}
                     </Heading>
                     <ProductForm
                       product={editingProduct || undefined}
@@ -217,10 +255,22 @@ function App() {
                               <p style={{ fontSize: "1rem", color: "#4A5568" }}>
                                 {product.description}
                               </p>
-                              <p style={{ fontSize: "1.25rem", fontWeight: "bold", color: "#2B6CB0" }}>
+                              <p
+                                style={{
+                                  fontSize: "1.25rem",
+                                  fontWeight: "bold",
+                                  color: "#2B6CB0",
+                                }}
+                              >
                                 R$ {product.price.toFixed(2)}
                               </p>
-                              <div style={{ display: "flex", gap: "0.75rem", marginTop: "1rem" }}>
+                              <div
+                                style={{
+                                  display: "flex",
+                                  gap: "0.75rem",
+                                  marginTop: "1rem",
+                                }}
+                              >
                                 <IconButton
                                   variant="outline"
                                   onClick={() => setEditingProduct(product)}
@@ -228,7 +278,9 @@ function App() {
                                   ✏️
                                 </IconButton>
                                 <IconButton
-                                  onClick={() => handleDeleteProduct(product.id!)}
+                                  onClick={() =>
+                                    handleDeleteProduct(product.id!)
+                                  }
                                 >
                                   🗑️
                                 </IconButton>

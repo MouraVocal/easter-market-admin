@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FormLayout } from "./FormLayout";
 import { supabase } from "../config/supabase";
 import { Product } from "../types";
-import { useToast } from "./Toast";
+import { useToast } from "./Toast/useToast";
 
 interface ProductFormProps {
   product?: Product;

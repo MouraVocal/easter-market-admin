@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { supabase } from "../config/supabase";
 import { SiteSettings } from "../types";
-import { useToast } from "./Toast";
+import { useToast } from "./Toast/useToast";
 
 const Container = styled.div`
   width: 100%;

@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ProductForm } from "./components/ProductForm";
 import { SettingsForm } from "./components/SettingsForm";
-import { supabase } from "./config/supabase";
+import { useToast } from "./components/Toast/useToast";
 import { Product } from "./types";
-import { useToast } from "./components/Toast";
+import { supabase } from "./config/supabase";
 
 const Box = styled.div`
   min-height: 100vh;
@@ -241,7 +241,7 @@ function App() {
 
                   <div>
                     <Heading size="lg" style={{ marginBottom: "1.5rem" }}>
-                      Product List
+                      Lista de Produtos
                     </Heading>
                     <SimpleGrid $columns={columns}>
                       {products.map((product) => (

@@ -1,172 +1,30 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
+import { useState, useEffect } from "react";
+import {
+  Box,
+  Container,
+  Heading,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  VStack,
+  Grid,
+  GridItem,
+  Card,
+  CardBody,
+  IconButton,
+  useToast,
+} from "@chakra-ui/react";
 import { ProductForm } from "./components/ProductForm";
 import { SettingsForm } from "./components/SettingsForm";
-import { useToast } from "./components/Toast/useToast";
-import { Product } from "./types";
 import { supabase } from "./config/supabase";
-
-const Box = styled.div`
-  min-height: 100vh;
-  background-color: ${({ theme }) => theme.colors.gray[50]};
-`;
-
-const Container = styled.div`
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
-  padding: ${({ theme }) =>
-    `${theme.space[4]} ${theme.space[4]} ${theme.space[6]}`};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-    padding: ${({ theme }) =>
-      `${theme.space[6]} ${theme.space[6]} ${theme.space[8]}`};
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) =>
-      `${theme.space[6]} ${theme.space[8]} ${theme.space[10]}`};
-  }
-`;
-
-const VStack = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.space[8]};
-`;
-
-const Heading = styled.h1<{ size?: string }>`
-  font-size: ${({ theme, size }) => theme.fontSizes[size || "4xl"]};
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.blue[700]};
-  text-align: center;
-`;
-
-const TabContainer = styled.div`
-  width: 100%;
-  max-width: 100%;
-  background-color: ${({ theme }) => theme.colors.white};
-  border-radius: ${({ theme }) => theme.radii.xl};
-  box-shadow: ${({ theme }) => theme.shadows.lg};
-  overflow: hidden;
-`;
-
-const TabPanel = styled.div`
-  padding: ${({ theme }) => theme.space[4]};
-  overflow-x: hidden;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-    padding: ${({ theme }) => theme.space[6]};
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: ${({ theme }) => theme.space[8]};
-  }
-`;
-
-const TabList = styled.div`
-  display: flex;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.gray[200]};
-  background-color: ${({ theme }) => theme.colors.gray[50]};
-`;
-
-const Tab = styled.button<{ $isSelected?: boolean }>`
-  flex: 1;
-  padding: ${({ theme }) => theme.space[4]};
-  font-weight: 600;
-  color: ${({ theme, $isSelected }) =>
-    $isSelected ? theme.colors.blue[600] : theme.colors.gray[600]};
-  background-color: ${({ $isSelected }) =>
-    $isSelected ? "white" : "transparent"};
-  border: none;
-  border-bottom: 2px solid
-    ${({ theme, $isSelected }) =>
-      $isSelected ? theme.colors.blue[600] : "transparent"};
-  margin-bottom: -2px;
-  cursor: pointer;
-  transition: all 0.2s;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.blue[600]};
-  }
-`;
-
-const SimpleGrid = styled.div<{ $columns: number }>`
-  display: grid;
-  grid-template-columns: repeat(${({ $columns }) => $columns}, 1fr);
-  gap: ${({ theme }) => theme.space[8]};
-  width: 100%;
-`;
-
-const Card = styled.div`
-  height: 100%;
-  border-radius: ${({ theme }) => theme.radii.lg};
-  overflow: hidden;
-  box-shadow: ${({ theme }) => theme.shadows.sm};
-  transition: all 0.2s;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: ${({ theme }) => theme.shadows.md};
-  }
-`;
-
-const CardBody = styled.div`
-  padding: ${({ theme }) => theme.space[4]};
-`;
-
-const ImageBox = styled.div<{ url: string }>`
-  background-image: url(${({ url }) => url});
-  background-size: cover;
-  background-position: center;
-  height: 240px;
-  border-radius: ${({ theme }) => theme.radii.md};
-`;
-
-const IconButton = styled.button<{ variant?: string }>`
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: ${({ theme }) => theme.space[4]};
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  color: ${({ theme, variant }) =>
-    variant === "outline" ? theme.colors.blue[600] : theme.colors.white};
-  background-color: ${({ theme, variant }) =>
-    variant === "outline" ? "transparent" : theme.colors.red[500]};
-  border: ${({ theme, variant }) =>
-    variant === "outline" ? `1px solid ${theme.colors.blue[600]}` : "none"};
-  border-radius: ${({ theme }) => theme.radii.lg};
-  cursor: pointer;
-  transition: all 0.2s;
-
-  &:hover {
-    transform: scale(1.05);
-    background-color: ${({ theme, variant }) =>
-      variant === "outline" ? theme.colors.blue[50] : theme.colors.red[600]};
-  }
-`;
+import { Product } from "./types";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
-  const [activeTab, setActiveTab] = useState(0);
-  const [columns, setColumns] = useState(4);
-  const { addToast } = useToast();
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 640) setColumns(1);
-      else if (width < 768) setColumns(2);
-      else if (width < 1024) setColumns(3);
-      else setColumns(4);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const toast = useToast();
 
   const loadProducts = async () => {
     try {
@@ -178,20 +36,33 @@ function App() {
       if (error) throw error;
       setProducts(data || []);
     } catch (error) {
-      console.error("Error loading products:", error);
-      addToast("Error loading products", "error");
+      toast({
+        title: "Error loading products",
+        description:
+          error instanceof Error ? error.message : "An error occurred",
+        status: "error",
+      });
     }
   };
 
   const handleDeleteProduct = async (id: string) => {
     try {
       const { error } = await supabase.from("products").delete().eq("id", id);
+
       if (error) throw error;
-      addToast("Product deleted successfully", "success");
+
+      toast({
+        title: "Product deleted successfully",
+        status: "success",
+      });
       loadProducts();
     } catch (error) {
-      console.error("Error:", error);
-      addToast("Error deleting product", "error");
+      toast({
+        title: "Error deleting product",
+        description:
+          error instanceof Error ? error.message : "An error occurred",
+        status: "error",
+      });
     }
   };
 
@@ -200,108 +71,104 @@ function App() {
   }, []);
 
   return (
-    <Box>
-      <Container>
-        <VStack>
-          <Heading>Easter Sales Admin</Heading>
+    <Container maxW="container.xl" py={[2, 4]} px={[2, 4, 6]}>
+      <Heading mb={[4, 6, 8]} fontSize={["xl", "2xl", "3xl"]}>
+        Admin Panel
+      </Heading>
+      <Tabs variant="enclosed">
+        <TabList overflowX="auto" overflowY="hidden" whiteSpace="nowrap" mb={[2, 4]}>
+          <Tab p={[2, 3, 4]}>Products</Tab>
+          <Tab p={[2, 3, 4]}>Settings</Tab>
+        </TabList>
 
-          <TabContainer>
-            <TabList>
-              <Tab
-                $isSelected={activeTab === 0}
-                onClick={() => setActiveTab(0)}
-              >
-                Produtos
-              </Tab>
-              <Tab
-                $isSelected={activeTab === 1}
-                onClick={() => setActiveTab(1)}
-              >
-                Configurações
-              </Tab>
-            </TabList>
+        <TabPanels>
+          <TabPanel px={[2, 4]} py={4}>
+            <VStack spacing={[4, 6, 8]} align="stretch">
+              <Box>
+                <Heading size={["sm", "md"]} mb={[2, 4]}>
+                  {editingProduct ? "Edit Product" : "Add New Product"}
+                </Heading>
+                <ProductForm
+                  product={editingProduct || undefined}
+                  onSuccess={() => {
+                    loadProducts();
+                    setEditingProduct(null);
+                  }}
+                />
+              </Box>
 
-            {activeTab === 0 ? (
-              <TabPanel>
-                <VStack>
-                  <div>
-                    <Heading size="lg" style={{ marginBottom: "1.5rem" }}>
-                      {editingProduct
-                        ? "Editar Produto"
-                        : "Adicionar Novo Produto"}
-                    </Heading>
-                    <ProductForm
-                      product={editingProduct || undefined}
-                      onSuccess={() => {
-                        loadProducts();
-                        setEditingProduct(null);
-                      }}
-                    />
-                  </div>
+              <Box>
+                <Heading size={["sm", "md"]} mb={[2, 4]}>
+                  Product List
+                </Heading>
+                <Grid
+                  templateColumns={[
+                    "1fr",
+                    "repeat(auto-fill, minmax(250px, 1fr))",
+                    "repeat(auto-fill, minmax(280px, 1fr))"
+                  ]}
+                  gap={[2, 3, 4]}
+                >
+                  {products.map((product) => (
+                    <GridItem key={product.id}>
+                      <Card>
+                        <CardBody>
+                          <VStack align="stretch" spacing={2}>
+                            {product.imageUrl && (
+                              <Box
+                                bgImage={`url(${product.imageUrl})`}
+                                bgSize="cover"
+                                bgPosition="center"
+                                h={["150px", "180px", "200px"]}
+                                borderRadius="md"
+                              />
+                            )}
+                            <Heading size="sm" noOfLines={2}>
+                              {product.name}
+                            </Heading>
+                            <Box noOfLines={3}>{product.description}</Box>
+                            <Box fontWeight="bold">
+                              R$ {product.price.toFixed(2)}
+                            </Box>
+                            <Box>
+                              <IconButton
+                                size={["sm", "md"]}
+                                aria-label="Edit product"
+                                icon={<span>✏️</span>}
+                                onClick={() => setEditingProduct(product)}
+                                mr={2}
+                              />
+                              <IconButton
+                                size={["sm", "md"]}
+                                aria-label="Delete product"
+                                icon={<span>🗑️</span>}
+                                onClick={() =>
+                                  product.id && handleDeleteProduct(product.id)
+                                }
+                                colorScheme="red"
+                              />
+                            </Box>
+                          </VStack>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                  ))}
+                </Grid>
+              </Box>
+            </VStack>
+          </TabPanel>
 
-                  <div>
-                    <Heading size="lg" style={{ marginBottom: "1.5rem" }}>
-                      Lista de Produtos
-                    </Heading>
-                    <SimpleGrid $columns={columns}>
-                      {products.map((product) => (
-                        <Card key={product.id}>
-                          <CardBody>
-                            <VStack>
-                              {product.imageUrl && (
-                                <ImageBox url={product.imageUrl} />
-                              )}
-                              <Heading size="md">{product.name}</Heading>
-                              <p style={{ fontSize: "1rem", color: "#4A5568" }}>
-                                {product.description}
-                              </p>
-                              <p
-                                style={{
-                                  fontSize: "1.25rem",
-                                  fontWeight: "bold",
-                                  color: "#2B6CB0",
-                                }}
-                              >
-                                R$ {product.price.toFixed(2)}
-                              </p>
-                              <div
-                                style={{
-                                  display: "flex",
-                                  gap: "0.75rem",
-                                  marginTop: "1rem",
-                                }}
-                              >
-                                <IconButton
-                                  variant="outline"
-                                  onClick={() => setEditingProduct(product)}
-                                >
-                                  ✏️
-                                </IconButton>
-                                <IconButton
-                                  onClick={() =>
-                                    handleDeleteProduct(product.id!)
-                                  }
-                                >
-                                  🗑️
-                                </IconButton>
-                              </div>
-                            </VStack>
-                          </CardBody>
-                        </Card>
-                      ))}
-                    </SimpleGrid>
-                  </div>
-                </VStack>
-              </TabPanel>
-            ) : (
-              <TabPanel>
-                <SettingsForm />
-              </TabPanel>
-            )}
-          </TabContainer>
-        </VStack>
-      </Container>
-    </Box>
+          <TabPanel px={[2, 4]} py={4}>
+            <Box>
+              <Heading size={["sm", "md"]} mb={[2, 4]}>
+                Site Settings
+              </Heading>
+              <SettingsForm />
+            </Box>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Container>
   );
 }
 

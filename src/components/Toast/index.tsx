@@ -1,6 +1,5 @@
-import { useCallback, useState } from "react";
+import { createContext, useContext, useState, useCallback } from "react";
 import styled, { keyframes } from "styled-components";
-import { ToastContext } from "../../contexts/ToastContext";
 
 interface Toast {
   id: string;
@@ -8,6 +7,12 @@ interface Toast {
   type: "success" | "error";
   isLeaving?: boolean;
 }
+
+interface ToastContextData {
+  addToast: (message: string, type: Toast["type"]) => void;
+}
+
+const ToastContext = createContext<ToastContextData>({} as ToastContextData);
 
 const slideIn = keyframes`
   from {
@@ -93,4 +98,12 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
       </ToastContainer>
     </ToastContext.Provider>
   );
+}
+
+export function useToast() {
+  const context = useContext(ToastContext);
+  if (!context) {
+    throw new Error("useToast must be used within a ToastProvider");
+  }
+  return context;
 }

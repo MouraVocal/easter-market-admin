@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Form = styled.form`
+export const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,12 +10,3 @@ const Form = styled.form`
   border-radius: ${({ theme }) => theme.radii.lg};
   box-shadow: ${({ theme }) => theme.shadows.sm};
 `;
-
-interface FormLayoutProps {
-  children: React.ReactNode;
-  onSubmit: (e: React.FormEvent) => void;
-}
-
-export function FormLayout({ children, onSubmit }: FormLayoutProps) {
-  return <Form onSubmit={onSubmit}>{children}</Form>;
-}

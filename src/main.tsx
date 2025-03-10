@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ThemeProvider } from 'styled-components'
 import { ChakraProvider } from '@chakra-ui/react'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
 import { theme } from './styles/theme'
@@ -24,9 +25,11 @@ createRoot(document.getElementById('root')!).render(
     <ChakraProvider>
       <ThemeProvider theme={theme}>
         <ToastProvider>
-          <App />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </ToastProvider>
       </ThemeProvider>
     </ChakraProvider>
-  </StrictMode>,
+  </StrictMode>
 )

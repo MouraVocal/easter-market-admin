@@ -15,7 +15,7 @@ export function SettingsForm() {
   const [loading, setLoading] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
   const { addToast } = useToast();
-  const [settings, setSettings] = useState<SiteSettings>({
+  const [settings, setSettings] = useState<SiteSettings & { id?: string }>({
     title: "",
     subtitle: "",
   });
@@ -49,9 +49,17 @@ export function SettingsForm() {
     setLoading(true);
 
     try {
+      if (!settings.id) {
+        throw new Error("Settings ID not found");
+      }
+
       const { error } = await supabase
         .from("site_settings")
-        .upsert(settings, { onConflict: "id" });
+        .update({
+          title: settings.title,
+          subtitle: settings.subtitle,
+        })
+        .eq("id", settings.id);
 
       if (error) throw error;
       addToast("Settings updated successfully", "success");

@@ -76,7 +76,12 @@ function App() {
         Admin Panel
       </Heading>
       <Tabs variant="enclosed">
-        <TabList overflowX="auto" overflowY="hidden" whiteSpace="nowrap" mb={[2, 4]}>
+        <TabList
+          overflowX="auto"
+          overflowY="hidden"
+          whiteSpace="nowrap"
+          mb={[2, 4]}
+        >
           <Tab p={[2, 3, 4]}>Products</Tab>
           <Tab p={[2, 3, 4]}>Settings</Tab>
         </TabList>
@@ -105,7 +110,7 @@ function App() {
                   templateColumns={[
                     "1fr",
                     "repeat(auto-fill, minmax(250px, 1fr))",
-                    "repeat(auto-fill, minmax(280px, 1fr))"
+                    "repeat(auto-fill, minmax(280px, 1fr))",
                   ]}
                   gap={[2, 3, 4]}
                 >
@@ -114,9 +119,9 @@ function App() {
                       <Card>
                         <CardBody>
                           <VStack align="stretch" spacing={2}>
-                            {product.imageUrl && (
+                            {product.image_url && (
                               <Box
-                                bgImage={`url(${product.imageUrl})`}
+                                bgImage={`url(${product.image_url})`}
                                 bgSize="cover"
                                 bgPosition="center"
                                 h={["150px", "180px", "200px"]}

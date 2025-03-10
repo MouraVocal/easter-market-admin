@@ -14,7 +14,7 @@ import {
   ImagePreview,
   PreviewImage,
   RemoveButton,
-  SubmitButton
+  SubmitButton,
 } from "./styles";
 import { Input } from "../../styles/elements/Input.styles";
 
@@ -25,10 +25,11 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
     name: product?.name || "",
     description: product?.description || "",
     price: product?.price || 0,
-    imageUrl: product?.imageUrl || "",
+    image_url: product?.image_url || "",
+    is_highlighted: product?.is_highlighted || false,
   });
   const [imagePreview, setImagePreview] = useState<string | null>(
-    product?.imageUrl || null
+    product?.image_url || null
   );
 
   const handleImageUpload = async (file: File): Promise<string> => {
@@ -53,7 +54,7 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
     try {
       const imageInput =
         document.querySelector<HTMLInputElement>("#imageInput");
-      let imageUrl = formData.imageUrl;
+      let imageUrl = formData.image_url;
 
       if (imageInput?.files?.[0]) {
         try {
@@ -66,7 +67,7 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
         }
       }
 
-      const productData = { ...formData, imageUrl };
+      const productData = { ...formData, image_url: imageUrl };
 
       if (product?.id) {
         const { error } = await supabase
@@ -134,6 +135,18 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
             required
           />
         </InputGroup>
+      </FormControl>
+
+      <FormControl>
+        <FormLabel htmlFor="is_highlighted">Destaque</FormLabel>
+        <input
+          type="checkbox"
+          id="is_highlighted"
+          checked={formData.is_highlighted}
+          onChange={(e) =>
+            setFormData({ ...formData, is_highlighted: e.target.checked })
+          }
+        />
       </FormControl>
 
       <FormControl>

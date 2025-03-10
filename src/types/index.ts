@@ -3,7 +3,4271 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  imageUrl: string;
+  image_url: string;
+  is_highlighted: boolean;
+  created_at?: Date;
+  updated_at?: Date;
+  updated_by?: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface SiteSettings {
+  id?: string;
+  title: string;
+  subtitle: string;
 }
 
 export interface SiteSettings {

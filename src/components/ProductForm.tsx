@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FormLayout } from "./FormLayout";
 import { supabase } from "../config/supabase";
 import { Product } from "../types";
+import { useToast } from "./Toast";
 
 interface ProductFormProps {
   product?: Product;
@@ -28,7 +29,7 @@ const Input = styled.input`
   border: 1px solid ${({ theme }) => theme.colors.gray[200]};
   border-radius: ${({ theme }) => theme.radii.md};
   background-color: ${({ theme }) => theme.colors.white};
-  
+
   &:focus {
     border-color: ${({ theme }) => theme.colors.blue[500]};
     box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.blue[500]};
@@ -49,7 +50,7 @@ const Textarea = styled.textarea`
   border-radius: ${({ theme }) => theme.radii.md};
   background-color: ${({ theme }) => theme.colors.white};
   resize: vertical;
-  
+
   &:focus {
     border-color: ${({ theme }) => theme.colors.blue[500]};
     box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.blue[500]};
@@ -73,7 +74,8 @@ const InputLeftAddon = styled.div`
   background-color: ${({ theme }) => theme.colors.gray[50]};
   border: 1px solid ${({ theme }) => theme.colors.gray[200]};
   border-right: none;
-  border-radius: ${({ theme }) => theme.radii.md} 0 0 ${({ theme }) => theme.radii.md};
+  border-radius: ${({ theme }) => theme.radii.md} 0 0
+    ${({ theme }) => theme.radii.md};
   color: ${({ theme }) => theme.colors.gray[600]};
 `;
 
@@ -85,7 +87,7 @@ const NumberInput = styled(Input)`
 const FileInput = styled(Input)`
   padding: ${({ theme }) => theme.space[2]};
   border: 2px dashed ${({ theme }) => theme.colors.gray[200]};
-  
+
   &:hover {
     border-color: ${({ theme }) => theme.colors.gray[300]};
   }
@@ -128,7 +130,7 @@ const RemoveButton = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.gray[200]};
   border-radius: ${({ theme }) => theme.radii.md};
   cursor: pointer;
-  
+
   &:hover {
     background: ${({ theme }) => theme.colors.gray[50]};
   }
@@ -158,6 +160,7 @@ const SubmitButton = styled.button`
 
 export function ProductForm({ product, onSuccess }: ProductFormProps) {
   const [loading, setLoading] = useState(false);
+  const { addToast } = useToast();
   const [formData, setFormData] = useState<Product>({
     name: product?.name || "",
     description: product?.description || "",
@@ -168,7 +171,7 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
     product?.imageUrl || null
   );
 
-  const handleImageUpload = async (file: File) => {
+  const handleImageUpload = async (file: File): Promise<string> => {
     const fileName = `${Date.now()}-${file.name}`;
     const { error } = await supabase.storage
       .from("products")
@@ -193,7 +196,14 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
       let imageUrl = formData.imageUrl;
 
       if (imageInput?.files?.[0]) {
-        imageUrl = await handleImageUpload(imageInput.files[0]);
+        try {
+          imageUrl = await handleImageUpload(imageInput.files[0]);
+        } catch (error) {
+          console.error("Error uploading image:", error);
+          addToast("Error uploading image", "error");
+          setLoading(false);
+          return;
+        }
       }
 
       const productData = { ...formData, imageUrl };
@@ -205,16 +215,17 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
           .eq("id", product.id);
 
         if (error) throw error;
+        addToast("Product updated successfully", "success");
       } else {
         const { error } = await supabase.from("products").insert([productData]);
-
         if (error) throw error;
+        addToast("Product created successfully", "success");
       }
 
       onSuccess();
     } catch (error) {
       console.error("Error:", error);
-      alert("An error occurred while saving the product");
+      addToast("Error saving product", "error");
     } finally {
       setLoading(false);
     }

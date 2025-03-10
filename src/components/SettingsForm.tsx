@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { supabase } from "../config/supabase";
 import { SiteSettings } from "../types";
+import { useToast } from "./Toast";
 
 const Container = styled.div`
   width: 100%;
@@ -81,6 +82,7 @@ const Button = styled.button`
 export function SettingsForm() {
   const [loading, setLoading] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
+  const { addToast } = useToast();
   const [settings, setSettings] = useState<SiteSettings>({
     title: "",
     subtitle: "",
@@ -98,11 +100,14 @@ export function SettingsForm() {
         .select("*")
         .single();
 
-      if (error) throw error;
+      if (error) {
+        addToast("Error loading settings", "error");
+        throw error;
+      }
       if (data) setSettings(data);
-      setIsInitialLoading(false);
     } catch (error) {
       console.error("Error loading settings:", error);
+    } finally {
       setIsInitialLoading(false);
     }
   };
@@ -117,10 +122,10 @@ export function SettingsForm() {
         .upsert(settings, { onConflict: "id" });
 
       if (error) throw error;
-      alert("Settings updated successfully");
+      addToast("Settings updated successfully", "success");
     } catch (error) {
       console.error("Error:", error);
-      alert("An error occurred while updating settings");
+      addToast("An error occurred while updating settings", "error");
     } finally {
       setLoading(false);
     }

@@ -4,6 +4,7 @@ import { ProductForm } from "./components/ProductForm";
 import { SettingsForm } from "./components/SettingsForm";
 import { supabase } from "./config/supabase";
 import { Product } from "./types";
+import { useToast } from "./components/Toast";
 
 const Box = styled.div`
   min-height: 100vh;
@@ -121,6 +122,7 @@ function App() {
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [activeTab, setActiveTab] = useState(0);
   const [columns, setColumns] = useState(4);
+  const { addToast } = useToast();
 
   useEffect(() => {
     const handleResize = () => {
@@ -147,7 +149,7 @@ function App() {
       setProducts(data || []);
     } catch (error) {
       console.error("Error loading products:", error);
-      alert("Error loading products");
+      addToast("Error loading products", "error");
     }
   };
 
@@ -155,11 +157,11 @@ function App() {
     try {
       const { error } = await supabase.from("products").delete().eq("id", id);
       if (error) throw error;
-      alert("Product deleted successfully");
+      addToast("Product deleted successfully", "success");
       loadProducts();
     } catch (error) {
       console.error("Error:", error);
-      alert("Error deleting product");
+      addToast("Error deleting product", "error");
     }
   };
 

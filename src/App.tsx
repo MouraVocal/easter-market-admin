@@ -119,15 +119,16 @@ function App() {
                       <Card>
                         <CardBody>
                           <VStack align="stretch" spacing={2}>
-                            {product.image_url && (
-                              <Box
-                                bgImage={`url(${product.image_url})`}
-                                bgSize="cover"
-                                bgPosition="center"
-                                h={["150px", "180px", "200px"]}
-                                borderRadius="md"
-                              />
-                            )}
+                            <Box
+                              bgImage={`url(${
+                                product.image_url || "/placeholder-image.jpg"
+                              })`}
+                              bgSize="contain"
+                              bgRepeat={"no-repeat"}
+                              bgPosition="center"
+                              h={["150px", "180px", "200px"]}
+                              borderRadius="md"
+                            />
                             <Heading size="sm" noOfLines={2}>
                               {product.name}
                             </Heading>

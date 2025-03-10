@@ -1,15 +1,15 @@
-import { createContext, useContext, useState, useCallback } from 'react';
-import styled, { keyframes } from 'styled-components';
+import { createContext, useContext, useState, useCallback } from "react";
+import styled, { keyframes } from "styled-components";
 
 interface Toast {
   id: string;
   message: string;
-  type: 'success' | 'error';
+  type: "success" | "error";
   isLeaving?: boolean;
 }
 
 interface ToastContextData {
-  addToast: (message: string, type: Toast['type']) => void;
+  addToast: (message: string, type: Toast["type"]) => void;
 }
 
 const ToastContext = createContext<ToastContextData>({} as ToastContextData);
@@ -43,18 +43,19 @@ const ToastContainer = styled.div`
   z-index: 9999;
 `;
 
-const ToastItem = styled.div<{ type: Toast['type']; isLeaving: boolean }>`
+const ToastItem = styled.div<{ type: Toast["type"]; $isLeaving: boolean }>`
   min-width: 300px;
   margin-bottom: 8px;
   padding: 16px;
   border-radius: ${({ theme }) => theme.radii.lg};
   background-color: ${({ theme, type }) =>
-    type === 'success' ? theme.colors.blue[500] : theme.colors.blue[700]};
+    type === "success" ? theme.colors.blue[500] : theme.colors.red[500]};
   color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.shadows.lg};
   display: flex;
   align-items: center;
-  animation: ${({ isLeaving }) => (isLeaving ? slideOut : slideIn)} 0.3s ease-in-out;
+  animation: ${({ $isLeaving }) => ($isLeaving ? slideOut : slideIn)} 0.3s
+    ease-in-out;
 
   svg {
     margin-right: 8px;
@@ -64,15 +65,17 @@ const ToastItem = styled.div<{ type: Toast['type']; isLeaving: boolean }>`
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
-  const addToast = useCallback((message: string, type: Toast['type']) => {
+  const addToast = useCallback((message: string, type: Toast["type"]) => {
     const id = Math.random().toString();
     setToasts((state) => [...state, { id, message, type }]);
 
     setTimeout(() => {
-      setToasts((state) => state.map((toast) => 
-        toast.id === id ? { ...toast, isLeaving: true } : toast
-      ));
-      
+      setToasts((state) =>
+        state.map((toast) =>
+          toast.id === id ? { ...toast, isLeaving: true } : toast
+        )
+      );
+
       setTimeout(() => {
         setToasts((state) => state.filter((toast) => toast.id !== id));
       }, 300);
@@ -84,8 +87,12 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
       {children}
       <ToastContainer>
         {toasts.map((toast) => (
-          <ToastItem key={toast.id} type={toast.type} isLeaving={toast.isLeaving || false}>
-            {toast.type === 'success' ? '✅' : '❌'} {toast.message}
+          <ToastItem
+            key={toast.id}
+            type={toast.type}
+            $isLeaving={toast.isLeaving || false}
+          >
+            {toast.type === "success" ? "✅" : "❌"} {toast.message}
           </ToastItem>
         ))}
       </ToastContainer>
@@ -96,7 +103,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
 export function useToast() {
   const context = useContext(ToastContext);
   if (!context) {
-    throw new Error('useToast must be used within a ToastProvider');
+    throw new Error("useToast must be used within a ToastProvider");
   }
   return context;
 }

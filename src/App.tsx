@@ -44,14 +44,14 @@ const TabList = styled.div`
   background-color: ${({ theme }) => theme.colors.gray[50]};
 `;
 
-const Tab = styled.button<{ isSelected?: boolean }>`
+const Tab = styled.button<{ $isSelected?: boolean }>`
   flex: 1;
   padding: ${({ theme }) => theme.space[4]};
   font-weight: 600;
-  color: ${({ theme, isSelected }) => isSelected ? theme.colors.blue[600] : theme.colors.gray[600]};
-  background-color: ${({ isSelected }) => isSelected ? "white" : "transparent"};
+  color: ${({ theme, $isSelected }) => $isSelected ? theme.colors.blue[600] : theme.colors.gray[600]};
+  background-color: ${({ $isSelected }) => $isSelected ? "white" : "transparent"};
   border: none;
-  border-bottom: 2px solid ${({ theme, isSelected }) => isSelected ? theme.colors.blue[600] : "transparent"};
+  border-bottom: 2px solid ${({ theme, $isSelected }) => $isSelected ? theme.colors.blue[600] : "transparent"};
   margin-bottom: -2px;
   cursor: pointer;
   transition: all 0.2s;
@@ -65,9 +65,9 @@ const TabPanel = styled.div`
   padding: ${({ theme }) => theme.space[8]};
 `;
 
-const SimpleGrid = styled.div<{ columns: number }>`
+const SimpleGrid = styled.div<{ $columns: number }>`
   display: grid;
-  grid-template-columns: repeat(${({ columns }) => columns}, 1fr);
+  grid-template-columns: repeat(${({ $columns }) => $columns}, 1fr);
   gap: ${({ theme }) => theme.space[8]};
   width: 100%;
 `;
@@ -177,10 +177,10 @@ function App() {
 
           <TabContainer>
             <TabList>
-              <Tab isSelected={activeTab === 0} onClick={() => setActiveTab(0)}>
+              <Tab $isSelected={activeTab === 0} onClick={() => setActiveTab(0)}>
                 Produtos
               </Tab>
-              <Tab isSelected={activeTab === 1} onClick={() => setActiveTab(1)}>
+              <Tab $isSelected={activeTab === 1} onClick={() => setActiveTab(1)}>
                 Configurações
               </Tab>
             </TabList>
@@ -205,7 +205,7 @@ function App() {
                     <Heading size="lg" style={{ marginBottom: "1.5rem" }}>
                       Product List
                     </Heading>
-                    <SimpleGrid columns={columns}>
+                    <SimpleGrid $columns={columns}>
                       {products.map((product) => (
                         <Card key={product.id}>
                           <CardBody>

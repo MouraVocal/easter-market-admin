@@ -12,7 +12,7 @@ interface ToastContextData {
   addToast: (message: string, type: Toast["type"]) => void;
 }
 
-const ToastContext = createContext<ToastContextData>({} as ToastContextData);
+export const ToastContext = createContext<ToastContextData>({} as ToastContextData);
 
 const slideIn = keyframes`
   from {

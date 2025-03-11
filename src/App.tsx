@@ -1,9 +1,10 @@
-import { Box, useToast } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { supabase } from "./config/supabase";
 import { AuthProvider } from "./contexts/AuthProvider";
 import { AppRoutes } from "./routes";
 import { Product } from "./types";
+import { useToast } from "./hooks/useToast";
 
 function AppContent() {
   const toast = useToast();
@@ -20,12 +21,10 @@ function AppContent() {
       if (error) throw error;
       setProducts(data || []);
     } catch (error) {
-      toast({
-        title: "Error loading products",
-        description:
-          error instanceof Error ? error.message : "An error occurred",
-        status: "error",
-      });
+      toast.addToast(
+        error instanceof Error ? error.message : "Error loading products",
+        "error"
+      );
     }
   };
 
@@ -35,18 +34,13 @@ function AppContent() {
 
       if (error) throw error;
 
-      toast({
-        title: "Product deleted successfully",
-        status: "success",
-      });
+      toast.addToast("Product deleted successfully", "success");
       loadProducts();
     } catch (error) {
-      toast({
-        title: "Error deleting product",
-        description:
-          error instanceof Error ? error.message : "An error occurred",
-        status: "error",
-      });
+      toast.addToast(
+        error instanceof Error ? error.message : "Error deleting product",
+        "error"
+      );
     }
   };
 

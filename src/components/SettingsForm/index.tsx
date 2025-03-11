@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { supabase } from "@config/supabase";
+import { supabase } from "@/config/supabase";
 import { SiteSettings } from "./types";
-import { useToast } from "@hooks/useToast";
+import { useToast } from "@/hooks/useToast";
 import { SITE_STRINGS } from "../../constants";
 import {
   Container,

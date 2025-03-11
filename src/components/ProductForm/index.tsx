@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { supabase } from "@config/supabase";
-import { useToast } from "@hooks/useToast";
-import { Input } from "@styles/elements/Input.styles";
-import { FormLayout } from "@components/FormLayout";
+import { supabase } from "@/config/supabase";
+import { useToast } from "@/hooks/useToast";
+import { Input } from "@/styles/elements/Input.styles";
+import { FormLayout } from "@/components/FormLayout";
 import {
   FileInput,
   FormControl,

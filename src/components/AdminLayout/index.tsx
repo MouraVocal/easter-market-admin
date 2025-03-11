@@ -14,8 +14,8 @@ import {
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@hooks/useAuth";
-import { SITE_STRINGS } from "../../constants";
+import { useAuth } from "@/hooks/useAuth";
+import { SITE_STRINGS } from "@/constants";
 
 interface AdminLayoutProps extends React.PropsWithChildren {
   tabIndex: number;

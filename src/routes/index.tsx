@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-import { Login } from "@pages/Login";
+import { Login } from "@/pages/Login";
 import { RequireAuth } from "./auth";
-import { AdminLayout } from "@components/AdminLayout";
-import { ProductList } from "@components/ProductList";
-import { ProductForm } from "@components/ProductForm";
-import { SettingsForm } from "@components/SettingsForm";
-import { EditProduct } from "@pages/EditProduct";
+import { AdminLayout } from "@/components/AdminLayout";
+import { ProductList } from "@/components/ProductList";
+import { ProductForm } from "@/components/ProductForm";
+import { SettingsForm } from "@/components/SettingsForm";
+import { EditProduct } from "@/pages/EditProduct";
 import { Box } from "@chakra-ui/react";
-import { Product } from "src/types";
-import { AuthProvider } from "@contexts/AuthProvider";
+import { Product } from "@/types";
+import { AuthProvider } from "@/contexts/AuthProvider";
 
 interface AppRoutesProps {
   products: Product[];

@@ -10,8 +10,8 @@ import {
   Input,
   VStack,
 } from "@chakra-ui/react";
-import { useAuth } from "../../hooks/useAuth";
-import { useToast } from "../../hooks/useToast";
+import { useAuth } from "@/hooks/useAuth";
+import { useToast } from "@/hooks/useToast";
 import { SITE_STRINGS } from "../../constants";
 
 export function Login() {

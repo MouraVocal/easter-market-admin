@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Heading, Button, HStack } from "@chakra-ui/react";
-import { ProductForm } from "@components/ProductForm";
-import { supabase } from "@config/supabase";
+import { ProductForm } from "@/components/ProductForm";
+import { supabase } from "@/config/supabase";
 import { useToast } from "@chakra-ui/react";
-import { SITE_STRINGS } from "../../constants";
+import { SITE_STRINGS } from "@/constants";
 import { EditProductContainer, LoadingBox } from "./styles";
-import { Product } from "src/types";
+import { Product } from "@/types";
 
 export function EditProduct() {
   const { id } = useParams<{ id: string }>();

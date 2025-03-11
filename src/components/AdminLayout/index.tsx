@@ -20,6 +20,7 @@ interface AdminLayoutProps extends React.PropsWithChildren {
   tabIndex: number;
   setTabIndex: React.Dispatch<React.SetStateAction<number>>;
   productContent: ReactNode;
+  productListContent: ReactNode;
   settingsContent: ReactNode;
 }
 
@@ -27,6 +28,7 @@ export function AdminLayout({
   tabIndex,
   setTabIndex,
   productContent,
+  productListContent,
   settingsContent,
 }: AdminLayoutProps) {
   const { signOut } = useAuth();
@@ -64,7 +66,8 @@ export function AdminLayout({
       </HStack>
       <Tabs index={tabIndex} onChange={setTabIndex}>
         <TabList>
-          <Tab>Products</Tab>
+          <Tab>Cadastrar Produto</Tab>
+          <Tab>Produtos Cadastrados</Tab>
           <Tab>Settings</Tab>
         </TabList>
 
@@ -72,6 +75,12 @@ export function AdminLayout({
           <TabPanel px={[2, 4]} py={4}>
             <VStack spacing={6} align="stretch">
               {productContent}
+            </VStack>
+          </TabPanel>
+
+          <TabPanel px={[2, 4]} py={4}>
+            <VStack spacing={6} align="stretch">
+              {productListContent}
             </VStack>
           </TabPanel>
 

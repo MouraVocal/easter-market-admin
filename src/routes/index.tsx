@@ -26,12 +26,18 @@ export function AppRoutes({
   onProductSuccess,
 }: AppRoutesProps) {
   const productContent = (
-    <>
-      <Box>
-        <ProductForm onSuccess={onProductSuccess} />
-      </Box>
-      <ProductList products={products} onDelete={onDeleteProduct} />
-    </>
+    <Box>
+      <ProductForm
+        onSuccess={() => {
+          onProductSuccess();
+          setTabIndex(1); // Switch to the "Produtos Cadastrados" tab
+        }}
+      />
+    </Box>
+  );
+
+  const productListContent = (
+    <ProductList products={products} onDelete={onDeleteProduct} />
   );
 
   return (
@@ -46,22 +52,10 @@ export function AppRoutes({
                 tabIndex={tabIndex}
                 setTabIndex={setTabIndex}
                 productContent={productContent}
+                productListContent={productListContent}
                 settingsContent={<SettingsForm onSuccess={onProductSuccess} />}
               >
                 <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      tabIndex === 0 ? (
-                        <ProductList
-                          products={products}
-                          onDelete={onDeleteProduct}
-                        />
-                      ) : (
-                        <ProductForm onSuccess={onProductSuccess} />
-                      )
-                    }
-                  />
                   <Route path="/edit/:id" element={<EditProduct />} />
                 </Routes>
               </AdminLayout>

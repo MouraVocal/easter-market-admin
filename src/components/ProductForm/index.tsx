@@ -1,22 +1,21 @@
 import { useState } from "react";
-import { FormLayout } from "../FormLayout";
 import { supabase } from "../../config/supabase";
 import { useToast } from "../../hooks/useToast";
-import { Product, ProductFormProps } from "./types";
+import { Input } from "../../styles/elements/Input.styles";
+import { FormLayout } from "../FormLayout";
 import {
+  FileInput,
   FormControl,
   FormLabel,
-  Textarea,
+  ImagePreview,
   InputGroup,
   InputLeftAddon,
-  NumberInput,
-  FileInput,
-  ImagePreview,
   PreviewImage,
   RemoveButton,
   SubmitButton,
+  Textarea,
 } from "./styles";
-import { Input } from "../../styles/elements/Input.styles";
+import { Product, ProductFormProps } from "./types";
 
 export function ProductForm({ product, onSuccess }: ProductFormProps) {
   const [loading, setLoading] = useState(false);
@@ -122,13 +121,17 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
         <FormLabel htmlFor="price">Preço</FormLabel>
         <InputGroup>
           <InputLeftAddon>R$</InputLeftAddon>
-          <NumberInput
+          <Input
             id="price"
             type="number"
-            value={formData.price}
-            onChange={(e) =>
-              setFormData({ ...formData, price: Number(e.target.value) })
-            }
+            value={formData.price === 0 ? "" : formData.price}
+            onChange={(e) => {
+              const value = e.target.value;
+              setFormData({
+                ...formData,
+                price: value === "" ? 0 : Number(value),
+              });
+            }}
             step="0.01"
             min="0"
             placeholder="0.00"

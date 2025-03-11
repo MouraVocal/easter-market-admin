@@ -3,10 +3,15 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(() => ({
   plugins: [
     react(),
     VitePWA({
+      devOptions: {
+        enabled: true,
+        type: 'module',
+        navigateFallback: 'index.html'
+      },
       registerType: 'autoUpdate',
       manifest: {
         name: "Administração de Vendas de Páscoa",
@@ -52,4 +57,4 @@ export default defineConfig({
       }
     })
   ],
-})
+}))

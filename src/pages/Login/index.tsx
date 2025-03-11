@@ -9,9 +9,9 @@ import {
   Heading,
   Input,
   VStack,
-  useToast,
 } from "@chakra-ui/react";
 import { useAuth } from "../../hooks/useAuth";
+import { useToast } from "../../hooks/useToast";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ export function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const { signIn } = useAuth();
   const navigate = useNavigate();
-  const toast = useToast();
+  const { addToast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,14 +27,7 @@ export function Login() {
 
     const { error } = await signIn(email, password);
     if (error) {
-      toast({
-        title: "Authentication Error",
-        description: error.message,
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-        position: "top"
-      });
+      addToast(error.message, "error");
       setIsLoading(false);
       return;
     }
@@ -64,7 +57,7 @@ export function Login() {
                 />
               </FormControl>
               <FormControl isRequired>
-                <FormLabel>Password</FormLabel>
+                <FormLabel>Senha</FormLabel>
                 <Input
                   type="password"
                   value={password}
@@ -77,7 +70,7 @@ export function Login() {
                 width="100%"
                 isLoading={isLoading}
               >
-                Sign In
+                Logar
               </Button>
             </VStack>
           </form>

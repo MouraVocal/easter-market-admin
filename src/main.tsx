@@ -10,7 +10,7 @@ import { theme } from "./styles/theme";
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/sw.js")
+      .register("/easter-market-admin/sw.js")
       .then((registration) => {
         console.log(
           "ServiceWorker registration successful:",
@@ -23,11 +23,13 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-createRoot(document.getElementById("root")!).render(
+const root = createRoot(document.getElementById("root")!);
+
+root.render(
   <StrictMode>
     <ChakraProvider>
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
+        <BrowserRouter basename="/easter-market-admin">
           <App />
         </BrowserRouter>
       </ThemeProvider>

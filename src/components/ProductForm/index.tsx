@@ -34,11 +34,11 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
 
   const handleImageUpload = async (file: File): Promise<string> => {
     let fileName = `${Date.now()}-${file.name}`;
-    
+
     // If updating a product and it has an existing image, reuse the file path
     if (product?.image_url) {
       const existingUrl = new URL(product.image_url);
-      fileName = existingUrl.pathname.split('/').pop() || fileName;
+      fileName = existingUrl.pathname.split("/").pop() || fileName;
     }
 
     const { error } = await supabase.storage
@@ -89,13 +89,6 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
           .eq("id", product.id);
 
         if (error) throw error;
-        toast({
-          title: SITE_STRINGS.PRODUCT_UPDATED,
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-          position: "top",
-        });
       } else {
         const { error } = await supabase.from("products").insert([productData]);
         if (error) throw error;

@@ -15,6 +15,7 @@ import {
 import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@hooks/useAuth";
+import { SITE_STRINGS } from "../../constants";
 
 interface AdminLayoutProps extends React.PropsWithChildren {
   tabIndex: number;
@@ -42,7 +43,8 @@ export function AdminLayout({
     } catch (error) {
       toast({
         title: "Error signing out",
-        description: error instanceof Error ? error.message : "An error occurred",
+        description:
+          error instanceof Error ? error.message : "An error occurred",
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -54,21 +56,23 @@ export function AdminLayout({
   return (
     <Container maxW="container.xl" py={[2, 4]} px={[2, 4, 6]}>
       <HStack justify="space-between" mb={[4, 6, 8]}>
-        <Heading fontSize={["xl", "2xl", "3xl"]}>Admin Panel</Heading>
+        <Heading fontSize={["xl", "2xl", "3xl"]}>
+          {SITE_STRINGS.ADMIN_PANEL}
+        </Heading>
         <Button
           colorScheme="red"
           variant="outline"
           size="sm"
           onClick={handleLogout}
         >
-          Logout
+          {SITE_STRINGS.LOGOUT}
         </Button>
       </HStack>
       <Tabs index={tabIndex} onChange={setTabIndex}>
         <TabList>
-          <Tab>Cadastrar Produto</Tab>
-          <Tab>Produtos Cadastrados</Tab>
-          <Tab>Settings</Tab>
+          <Tab>{SITE_STRINGS.REGISTER_PRODUCT}</Tab>
+          <Tab>{SITE_STRINGS.REGISTERED_PRODUCTS}</Tab>
+          <Tab>{SITE_STRINGS.SETTINGS}</Tab>
         </TabList>
 
         <TabPanels>
@@ -87,7 +91,7 @@ export function AdminLayout({
           <TabPanel px={[2, 4]} py={4}>
             <Box>
               <Heading size={["sm", "md"]} mb={[2, 4]}>
-                Site Settings
+                {SITE_STRINGS.SITE_SETTINGS}
               </Heading>
               {settingsContent}
             </Box>

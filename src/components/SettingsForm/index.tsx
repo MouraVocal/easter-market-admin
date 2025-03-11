@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@config/supabase";
 import { SiteSettings } from "./types";
 import { useToast } from "@hooks/useToast";
+import { SITE_STRINGS } from "../../constants";
 import {
   Container,
   LoadingBox,
@@ -19,9 +20,10 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
   const [loading, setLoading] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
   const { addToast } = useToast();
-  const [settings, setSettings] = useState<SiteSettings & { id?: string }>({    title: "",
+  const [settings, setSettings] = useState<SiteSettings & { id?: string }>({
+    title: "",
     subtitle: "",
-    whatsapp_number: 0
+    whatsapp_number: 0,
   });
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
         .single();
 
       if (error) {
-        addToast("Error loading settings", "error");
+        addToast(SITE_STRINGS.ERROR_LOADING_SETTINGS, "error");
         throw error;
       }
       if (data) setSettings(data);
@@ -54,7 +56,7 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
 
     try {
       if (!settings.id) {
-        throw new Error("Settings ID not found");
+        throw new Error(SITE_STRINGS.SETTINGS_ID_NOT_FOUND);
       }
 
       const { error } = await supabase
@@ -62,16 +64,16 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
         .update({
           title: settings.title,
           subtitle: settings.subtitle,
-          whatsapp_number: settings.whatsapp_number
+          whatsapp_number: settings.whatsapp_number,
         })
         .eq("id", settings.id);
 
       if (error) throw error;
-      addToast("Settings updated successfully", "success");
+      addToast(SITE_STRINGS.SETTINGS_UPDATED, "success");
       onSuccess();
     } catch (error) {
       console.error("Error:", error);
-      addToast("An error occurred while updating settings", "error");
+      addToast(SITE_STRINGS.ERROR_UPDATING_SETTINGS, "error");
     } finally {
       setLoading(false);
     }
@@ -92,45 +94,50 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
   return (
     <form onSubmit={handleSubmit}>
       <FormControl>
-        <FormLabel htmlFor="title">Título do Site</FormLabel>
+        <FormLabel htmlFor="title">{SITE_STRINGS.SITE_TITLE}</FormLabel>
         <Input
           id="title"
           value={settings.title}
           onChange={(e) => setSettings({ ...settings, title: e.target.value })}
-          placeholder="Digite o título do site"
+          placeholder={SITE_STRINGS.ENTER_SITE_TITLE}
           required
         />
       </FormControl>
 
       <FormControl>
-        <FormLabel htmlFor="subtitle">Subtítulo do Site</FormLabel>
+        <FormLabel htmlFor="subtitle">{SITE_STRINGS.SITE_SUBTITLE}</FormLabel>
         <Input
           id="subtitle"
           value={settings.subtitle}
           onChange={(e) =>
             setSettings({ ...settings, subtitle: e.target.value })
           }
-          placeholder="Digite o subtítulo do site"
+          placeholder={SITE_STRINGS.ENTER_SITE_SUBTITLE}
           required
         />
       </FormControl>
 
       <FormControl>
-        <FormLabel htmlFor="whatsapp_number">WhatsApp Number</FormLabel>
+        <FormLabel htmlFor="whatsapp_number">
+          {SITE_STRINGS.WHATSAPP_NUMBER}
+        </FormLabel>
         <Input
           id="whatsapp_number"
           type="number"
           value={settings.whatsapp_number}
           onChange={(e) =>
-            setSettings({ ...settings, whatsapp_number: Number(e.target.value) })
+            setSettings({
+              ...settings,
+              whatsapp_number: Number(e.target.value),
+            })
           }
-          placeholder="Digite o número do WhatsApp"
+          placeholder={SITE_STRINGS.ENTER_WHATSAPP}
           required
         />
       </FormControl>
 
       <Button type="submit" disabled={loading}>
-        {loading ? "Salvando..." : "Atualizar Configurações"}
+        {loading ? SITE_STRINGS.SAVING : SITE_STRINGS.UPDATE_SETTINGS}
       </Button>
     </form>
   );

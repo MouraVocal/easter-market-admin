@@ -4,6 +4,7 @@ import { Heading, Button, HStack } from "@chakra-ui/react";
 import { ProductForm } from "@components/ProductForm";
 import { supabase } from "@config/supabase";
 import { useToast } from "@chakra-ui/react";
+import { SITE_STRINGS } from "../../constants";
 import { EditProductContainer, LoadingBox } from "./styles";
 import { Product } from "src/types";
 
@@ -13,8 +14,6 @@ export function EditProduct() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const toast = useToast();
-
-  console.log(id);
 
   useEffect(() => {
     const loadProduct = async () => {
@@ -31,7 +30,7 @@ export function EditProduct() {
         if (data) setProduct(data);
       } catch (error) {
         toast({
-          title: "Error loading product",
+          title: SITE_STRINGS.ERROR_LOADING_PRODUCT,
           description:
             error instanceof Error ? error.message : "An error occurred",
           status: "error",
@@ -51,7 +50,7 @@ export function EditProduct() {
   const handleSuccess = () => {
     toast({
       title: "Success",
-      description: "Product updated successfully",
+      description: SITE_STRINGS.PRODUCT_UPDATED,
       status: "success",
       duration: 3000,
       isClosable: true,
@@ -63,7 +62,7 @@ export function EditProduct() {
   if (loading) {
     return (
       <EditProductContainer maxW="container.xl">
-        <LoadingBox>Loading...</LoadingBox>
+        <LoadingBox>{SITE_STRINGS.LOADING}</LoadingBox>
       </EditProductContainer>
     );
   }
@@ -71,7 +70,9 @@ export function EditProduct() {
   return (
     <EditProductContainer maxW="container.xl">
       <HStack justify="space-between" mb={[4, 6, 8]}>
-        <Heading fontSize={["xl", "2xl", "3xl"]}>Edit Product</Heading>
+        <Heading fontSize={["xl", "2xl", "3xl"]}>
+          {SITE_STRINGS.EDIT_PRODUCT}
+        </Heading>
         <Button
           colorScheme="gray"
           variant="outline"
@@ -79,7 +80,7 @@ export function EditProduct() {
           onClick={() => navigate("/")}
           leftIcon={<span>←</span>}
         >
-          Back
+          {SITE_STRINGS.BACK}
         </Button>
       </HStack>
       {product && <ProductForm product={product} onSuccess={handleSuccess} />}

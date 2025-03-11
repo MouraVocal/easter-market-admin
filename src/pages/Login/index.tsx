@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { useAuth } from "../../hooks/useAuth";
 import { useToast } from "../../hooks/useToast";
+import { SITE_STRINGS } from "../../constants";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -45,11 +46,11 @@ export function Login() {
         bg="white"
       >
         <VStack spacing={6}>
-          <Heading size="lg">Login</Heading>
+          <Heading size="lg">{SITE_STRINGS.LOGIN}</Heading>
           <form onSubmit={handleSubmit} style={{ width: "100%" }}>
             <VStack spacing={4}>
               <FormControl isRequired>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{SITE_STRINGS.EMAIL}</FormLabel>
                 <Input
                   type="email"
                   value={email}
@@ -57,7 +58,7 @@ export function Login() {
                 />
               </FormControl>
               <FormControl isRequired>
-                <FormLabel>Senha</FormLabel>
+                <FormLabel>{SITE_STRINGS.PASSWORD}</FormLabel>
                 <Input
                   type="password"
                   value={password}
@@ -70,7 +71,7 @@ export function Login() {
                 width="100%"
                 isLoading={isLoading}
               >
-                Logar
+                {SITE_STRINGS.LOGIN_BUTTON}
               </Button>
             </VStack>
           </form>

@@ -1,5 +1,6 @@
 {
   "name": "vendas-pascoa-admin",
+  "homepage": "https://mouravocal.github.io/easter-market-admin",
   "private": true,
   "version": "0.0.0",
   "type": "module",

@@ -1,0 +1,17 @@
+{
+  "name": "Easter Market Admin",
+  "short_name": "Easter Admin",
+  "description": "Admin panel for Easter Market products management",
+  "start_url": "/easter-market-admin/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3182ce",
+  "icons": [
+    {
+      "src": "/bunny.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

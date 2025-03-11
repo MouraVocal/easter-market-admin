@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Container, Heading, Box } from "@chakra-ui/react";
-import { ProductForm } from "../components/ProductForm";
-import { supabase } from "../config/supabase";
-import { Product } from "../types";
+import { Heading } from "@chakra-ui/react";
+import { ProductForm } from "../../components/ProductForm";
+import { supabase } from "../../config/supabase";
 import { useToast } from "@chakra-ui/react";
+import { EditProductContainer, LoadingBox } from "./styles";
+import { Product } from "../../types";
 
 export function EditProduct() {
   const { id } = useParams<{ id: string }>();
@@ -32,6 +33,9 @@ export function EditProduct() {
           description:
             error instanceof Error ? error.message : "An error occurred",
           status: "error",
+          duration: 3000,
+          isClosable: true,
+          position: "top",
         });
         navigate("/");
       } finally {
@@ -42,22 +46,32 @@ export function EditProduct() {
     loadProduct();
   }, [id, navigate, toast]);
 
+  const handleSuccess = () => {
+    toast({
+      title: "Success",
+      description: "Product updated successfully",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+    navigate("/");
+  };
+
   if (loading) {
     return (
-      <Container maxW="container.xl" py={[2, 4]} px={[2, 4, 6]}>
-        <Box>Loading...</Box>
-      </Container>
+      <EditProductContainer maxW="container.xl">
+        <LoadingBox>Loading...</LoadingBox>
+      </EditProductContainer>
     );
   }
 
   return (
-    <Container maxW="container.xl" py={[2, 4]} px={[2, 4, 6]}>
+    <EditProductContainer maxW="container.xl">
       <Heading mb={[4, 6, 8]} fontSize={["xl", "2xl", "3xl"]}>
         Edit Product
       </Heading>
-      {product && (
-        <ProductForm product={product} onSuccess={() => navigate("/")} />
-      )}
-    </Container>
+      {product && <ProductForm product={product} onSuccess={handleSuccess} />}
+    </EditProductContainer>
   );
 }

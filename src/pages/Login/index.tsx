@@ -28,11 +28,12 @@ export function Login() {
     const { error } = await signIn(email, password);
     if (error) {
       toast({
-        title: "Error",
-        description: "Invalid email or password",
+        title: "Authentication Error",
+        description: error.message,
         status: "error",
         duration: 3000,
         isClosable: true,
+        position: "top"
       });
       setIsLoading(false);
       return;

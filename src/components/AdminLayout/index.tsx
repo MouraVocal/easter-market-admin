@@ -8,8 +8,13 @@ import {
   TabPanels,
   Tabs,
   VStack,
+  Button,
+  HStack,
+  useToast,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 interface AdminLayoutProps extends React.PropsWithChildren {
   tabIndex: number;
@@ -24,11 +29,39 @@ export function AdminLayout({
   productContent,
   settingsContent,
 }: AdminLayoutProps) {
+  const { signOut } = useAuth();
+  const navigate = useNavigate();
+  const toast = useToast();
+
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      navigate("/login");
+    } catch (error) {
+      toast({
+        title: "Error signing out",
+        description: error instanceof Error ? error.message : "An error occurred",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
   return (
     <Container maxW="container.xl" py={[2, 4]} px={[2, 4, 6]}>
-      <Heading mb={[4, 6, 8]} fontSize={["xl", "2xl", "3xl"]}>
-        Admin Panel
-      </Heading>
+      <HStack justify="space-between" mb={[4, 6, 8]}>
+        <Heading fontSize={["xl", "2xl", "3xl"]}>Admin Panel</Heading>
+        <Button
+          colorScheme="red"
+          variant="outline"
+          size="sm"
+          onClick={handleLogout}
+        >
+          Logout
+        </Button>
+      </HStack>
       <Tabs index={tabIndex} onChange={setTabIndex}>
         <TabList>
           <Tab>Products</Tab>

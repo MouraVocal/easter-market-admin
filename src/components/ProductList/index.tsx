@@ -40,7 +40,7 @@ export function ProductList({ products, onDelete }: ProductListProps) {
                 <VStack align="stretch" spacing={2}>
                   <Box position="relative">
                     <Box
-                      bgImage={`url(${product.image_url || "/placeholder-image.jpg"})`}
+                      bgImage={`url(${product.image_url ? `${product.image_url}?t=${Date.now()}` : "/placeholder-image.jpg"})`}
                       bgSize="contain"
                       bgRepeat="no-repeat"
                       bgPosition="center"

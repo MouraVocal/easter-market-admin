@@ -29,7 +29,7 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
     is_highlighted: product?.is_highlighted || false,
   });
   const [imagePreview, setImagePreview] = useState<string | null>(
-    product?.image_url || null
+    product?.image_url ? `${product.image_url}?t=${Date.now()}` : null
   );
 
   const handleImageUpload = async (file: File): Promise<string> => {

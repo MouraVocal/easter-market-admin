@@ -8,7 +8,11 @@ import { SITE_STRINGS } from "@/constants";
 import { EditProductContainer, LoadingBox } from "./styles";
 import { Product } from "@/types";
 
-export function EditProduct() {
+interface IEditProductProps {
+  onProductSuccess: () => void;
+}
+
+export function EditProduct({ onProductSuccess }: IEditProductProps) {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [product, setProduct] = useState<Product | null>(null);
@@ -56,6 +60,7 @@ export function EditProduct() {
       isClosable: true,
       position: "top",
     });
+    onProductSuccess();
     navigate("/");
   };
 

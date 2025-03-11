@@ -62,7 +62,7 @@ export function AppRoutes({
           path="/edit/:id"
           element={
             <RequireAuth>
-              <EditProduct />
+              <EditProduct onProductSuccess={onProductSuccess} />
             </RequireAuth>
           }
         />

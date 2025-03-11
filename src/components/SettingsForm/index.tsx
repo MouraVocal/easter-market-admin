@@ -19,9 +19,9 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
   const [loading, setLoading] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
   const { addToast } = useToast();
-  const [settings, setSettings] = useState<SiteSettings & { id?: string }>({
-    title: "",
+  const [settings, setSettings] = useState<SiteSettings & { id?: string }>({    title: "",
     subtitle: "",
+    whatsapp_number: 0
   });
 
   useEffect(() => {
@@ -62,6 +62,7 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
         .update({
           title: settings.title,
           subtitle: settings.subtitle,
+          whatsapp_number: settings.whatsapp_number
         })
         .eq("id", settings.id);
 
@@ -110,6 +111,20 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
             setSettings({ ...settings, subtitle: e.target.value })
           }
           placeholder="Digite o subtítulo do site"
+          required
+        />
+      </FormControl>
+
+      <FormControl>
+        <FormLabel htmlFor="whatsapp_number">WhatsApp Number</FormLabel>
+        <Input
+          id="whatsapp_number"
+          type="number"
+          value={settings.whatsapp_number}
+          onChange={(e) =>
+            setSettings({ ...settings, whatsapp_number: Number(e.target.value) })
+          }
+          placeholder="Digite o número do WhatsApp"
           required
         />
       </FormControl>

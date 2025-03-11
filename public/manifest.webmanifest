@@ -8,7 +8,7 @@
   "theme_color": "#3182ce",
   "icons": [
     {
-      "src": "/bunny.svg",
+      "src": "/easter-market-admin/bunny.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any maskable"

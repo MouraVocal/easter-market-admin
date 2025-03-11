@@ -5,6 +5,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig(() => ({
+  base: '/easter-market-admin',
   plugins: [
     react(),
     VitePWA({
@@ -71,5 +72,4 @@ export default defineConfig(() => ({
       '@/types': path.resolve(__dirname, './src/types')
     }
   },
-  base: '/easter-market-admin'
 }))

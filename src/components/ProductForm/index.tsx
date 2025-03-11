@@ -16,6 +16,7 @@ import {
   Textarea,
 } from "./styles";
 import { Product, ProductFormProps } from "./types";
+import { SITE_STRINGS } from "@/constants";
 
 export function ProductForm({ product, onSuccess }: ProductFormProps) {
   const [loading, setLoading] = useState(false);
@@ -32,10 +33,17 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
   );
 
   const handleImageUpload = async (file: File): Promise<string> => {
-    const fileName = `${Date.now()}-${file.name}`;
+    let fileName = `${Date.now()}-${file.name}`;
+    
+    // If updating a product and it has an existing image, reuse the file path
+    if (product?.image_url) {
+      const existingUrl = new URL(product.image_url);
+      fileName = existingUrl.pathname.split('/').pop() || fileName;
+    }
+
     const { error } = await supabase.storage
       .from("products")
-      .upload(fileName, file);
+      .upload(fileName, file, { upsert: true });
 
     if (error) throw error;
 
@@ -65,7 +73,7 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
             status: "error",
             duration: 3000,
             isClosable: true,
-            position: "top"
+            position: "top",
           });
           setLoading(false);
           return;
@@ -82,21 +90,21 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
 
         if (error) throw error;
         toast({
-          title: "Product updated successfully",
+          title: SITE_STRINGS.PRODUCT_UPDATED,
           status: "success",
           duration: 3000,
           isClosable: true,
-          position: "top"
+          position: "top",
         });
       } else {
         const { error } = await supabase.from("products").insert([productData]);
         if (error) throw error;
         toast({
-          title: "Product created successfully",
+          title: SITE_STRINGS.PRODUCT_CREATED,
           status: "success",
           duration: 3000,
           isClosable: true,
-          position: "top"
+          position: "top",
         });
       }
 
@@ -108,7 +116,7 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
         status: "error",
         duration: 3000,
         isClosable: true,
-        position: "top"
+        position: "top",
       });
     } finally {
       setLoading(false);

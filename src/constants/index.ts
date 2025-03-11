@@ -15,6 +15,7 @@ export const SITE_STRINGS = {
   REGISTER_PRODUCT: "Cadastrar Produto",
   REGISTERED_PRODUCTS: "Produtos Cadastrados",
   EDIT_PRODUCT: "Editar Produto",
+  PRODUCT_CREATED: "Produto criado com sucesso",
   PRODUCT_UPDATED: "Produto atualizado com sucesso",
   PRODUCT_DELETED: "Produto excluído com sucesso",
   ERROR_LOADING_PRODUCT: "Erro ao carregar produto",

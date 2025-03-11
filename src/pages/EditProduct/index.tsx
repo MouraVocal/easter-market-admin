@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Button, HStack } from "@chakra-ui/react";
 import { ProductForm } from "@components/ProductForm";
 import { supabase } from "@config/supabase";
 import { useToast } from "@chakra-ui/react";
@@ -70,9 +70,18 @@ export function EditProduct() {
 
   return (
     <EditProductContainer maxW="container.xl">
-      <Heading mb={[4, 6, 8]} fontSize={["xl", "2xl", "3xl"]}>
-        Edit Product
-      </Heading>
+      <HStack justify="space-between" mb={[4, 6, 8]}>
+        <Heading fontSize={["xl", "2xl", "3xl"]}>Edit Product</Heading>
+        <Button
+          colorScheme="gray"
+          variant="outline"
+          size="sm"
+          onClick={() => navigate("/")}
+          leftIcon={<span>←</span>}
+        >
+          Back
+        </Button>
+      </HStack>
       {product && <ProductForm product={product} onSuccess={handleSuccess} />}
     </EditProductContainer>
   );

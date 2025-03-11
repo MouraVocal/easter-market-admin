@@ -33,6 +33,28 @@ function AppContent() {
 
   const handleDeleteProduct = async (id: string) => {
     try {
+      // First, get the product to access its image URL
+      const { data: product, error: fetchError } = await supabase
+        .from("products")
+        .select("image_url")
+        .eq("id", id)
+        .single();
+
+      if (fetchError) throw fetchError;
+
+      // If product has an image, delete it from storage
+      if (product?.image_url) {
+        const fileName = new URL(product.image_url).pathname.split("/").pop();
+        if (fileName) {
+          const { error: storageError } = await supabase.storage
+            .from("products")
+            .remove([fileName]);
+
+          if (storageError) throw storageError;
+        }
+      }
+
+      // Then delete the product record
       const { error } = await supabase.from("products").delete().eq("id", id);
 
       if (error) throw error;

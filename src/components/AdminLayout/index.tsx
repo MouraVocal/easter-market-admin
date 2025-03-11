@@ -70,21 +70,21 @@ export function AdminLayout({
       </HStack>
       <Tabs index={tabIndex} onChange={setTabIndex}>
         <TabList>
-          <Tab>{SITE_STRINGS.REGISTER_PRODUCT}</Tab>
           <Tab>{SITE_STRINGS.REGISTERED_PRODUCTS}</Tab>
+          <Tab>{SITE_STRINGS.REGISTER_PRODUCT}</Tab>
           <Tab>{SITE_STRINGS.SETTINGS}</Tab>
         </TabList>
 
         <TabPanels>
           <TabPanel px={[2, 4]} py={4}>
             <VStack spacing={6} align="stretch">
-              {productContent}
+              {productListContent}
             </VStack>
           </TabPanel>
 
           <TabPanel px={[2, 4]} py={4}>
             <VStack spacing={6} align="stretch">
-              {productListContent}
+              {productContent}
             </VStack>
           </TabPanel>
 

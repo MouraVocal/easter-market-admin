@@ -5,6 +5,7 @@ import { AuthProvider } from "./contexts/AuthProvider";
 import { AppRoutes } from "./routes";
 import { Product } from "./types";
 import { useToast } from "@chakra-ui/react";
+import { SITE_STRINGS } from "./constants";
 
 function AppContent() {
   const toast = useToast();
@@ -22,11 +23,12 @@ function AppContent() {
       setProducts(data || []);
     } catch (error) {
       toast({
-        title: error instanceof Error ? error.message : "Error loading products",
+        title:
+          error instanceof Error ? error.message : "Error loading products",
         status: "error",
         duration: 3000,
         isClosable: true,
-        position: "top"
+        position: "top",
       });
     }
   };
@@ -60,20 +62,21 @@ function AppContent() {
       if (error) throw error;
 
       toast({
-        title: "Product deleted successfully",
+        title: SITE_STRINGS.PRODUCT_DELETED,
         status: "success",
         duration: 3000,
         isClosable: true,
-        position: "top"
+        position: "top",
       });
       loadProducts();
     } catch (error) {
       toast({
-        title: error instanceof Error ? error.message : "Error deleting product",
+        title:
+          error instanceof Error ? error.message : "Error deleting product",
         status: "error",
         duration: 3000,
         isClosable: true,
-        position: "top"
+        position: "top",
       });
     }
   };

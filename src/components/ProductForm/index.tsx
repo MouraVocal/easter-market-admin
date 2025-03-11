@@ -101,6 +101,19 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
         });
       }
 
+      if (!product?.id) {
+        // Reset form only for new product creation
+        setFormData({
+          name: "",
+          description: "",
+          price: 0,
+          image_url: "",
+          is_highlighted: false,
+        });
+        setImagePreview(null);
+        const imageInput = document.querySelector<HTMLInputElement>("#imageInput");
+        if (imageInput) imageInput.value = "";
+      }
       onSuccess();
     } catch (error) {
       console.error("Error:", error);

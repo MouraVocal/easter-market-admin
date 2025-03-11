@@ -7,6 +7,7 @@ import {
   Heading,
   IconButton,
   VStack,
+  Badge,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Product } from "../../types";
@@ -37,14 +38,31 @@ export function ProductList({ products, onDelete }: ProductListProps) {
             <Card>
               <CardBody>
                 <VStack align="stretch" spacing={2}>
-                  <Box
-                    bgImage={`url(${product.image_url || "/placeholder-image.jpg"})`}
-                    bgSize="contain"
-                    bgRepeat="no-repeat"
-                    bgPosition="center"
-                    h={["150px", "180px", "200px"]}
-                    borderRadius="md"
-                  />
+                  <Box position="relative">
+                    <Box
+                      bgImage={`url(${product.image_url || "/placeholder-image.jpg"})`}
+                      bgSize="contain"
+                      bgRepeat="no-repeat"
+                      bgPosition="center"
+                      h={["150px", "180px", "200px"]}
+                      borderRadius="md"
+                    />
+                    {product.is_highlighted && (
+                      <Badge
+                        position="absolute"
+                        top="2"
+                        right="2"
+                        colorScheme="yellow"
+                        variant="solid"
+                        fontSize="xs"
+                        px={2}
+                        py={1}
+                        borderRadius="full"
+                      >
+                        Destaque
+                      </Badge>
+                    )}
+                  </Box>
                   <Heading size="sm" noOfLines={2}>
                     {product.name}
                   </Heading>

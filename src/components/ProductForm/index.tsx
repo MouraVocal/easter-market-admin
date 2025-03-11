@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { supabase } from "@/config/supabase";
-import { useToast } from "@/hooks/useToast";
+import { useToast } from "@chakra-ui/react";
 import { Input } from "@/styles/elements/Input.styles";
 import { FormLayout } from "@/components/FormLayout";
 import {
@@ -19,7 +19,7 @@ import { Product, ProductFormProps } from "./types";
 
 export function ProductForm({ product, onSuccess }: ProductFormProps) {
   const [loading, setLoading] = useState(false);
-  const { addToast } = useToast();
+  const toast = useToast();
   const [formData, setFormData] = useState<Product>({
     name: product?.name || "",
     description: product?.description || "",
@@ -60,7 +60,13 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
           imageUrl = await handleImageUpload(imageInput.files[0]);
         } catch (error) {
           console.error("Error uploading image:", error);
-          addToast("Error uploading image", "error");
+          toast({
+            title: "Error uploading image",
+            status: "error",
+            duration: 3000,
+            isClosable: true,
+            position: "top"
+          });
           setLoading(false);
           return;
         }
@@ -75,17 +81,35 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
           .eq("id", product.id);
 
         if (error) throw error;
-        addToast("Product updated successfully", "success");
+        toast({
+          title: "Product updated successfully",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+          position: "top"
+        });
       } else {
         const { error } = await supabase.from("products").insert([productData]);
         if (error) throw error;
-        addToast("Product created successfully", "success");
+        toast({
+          title: "Product created successfully",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+          position: "top"
+        });
       }
 
       onSuccess();
     } catch (error) {
       console.error("Error:", error);
-      addToast("Error saving product", "error");
+      toast({
+        title: "Error saving product",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top"
+      });
     } finally {
       setLoading(false);
     }

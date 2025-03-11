@@ -4,7 +4,7 @@ import { supabase } from "./config/supabase";
 import { AuthProvider } from "./contexts/AuthProvider";
 import { AppRoutes } from "./routes";
 import { Product } from "./types";
-import { useToast } from "./hooks/useToast";
+import { useToast } from "@chakra-ui/react";
 
 function AppContent() {
   const toast = useToast();
@@ -21,10 +21,13 @@ function AppContent() {
       if (error) throw error;
       setProducts(data || []);
     } catch (error) {
-      toast.addToast(
-        error instanceof Error ? error.message : "Error loading products",
-        "error"
-      );
+      toast({
+        title: error instanceof Error ? error.message : "Error loading products",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top"
+      });
     }
   };
 
@@ -34,13 +37,22 @@ function AppContent() {
 
       if (error) throw error;
 
-      toast.addToast("Product deleted successfully", "success");
+      toast({
+        title: "Product deleted successfully",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top"
+      });
       loadProducts();
     } catch (error) {
-      toast.addToast(
-        error instanceof Error ? error.message : "Error deleting product",
-        "error"
-      );
+      toast({
+        title: error instanceof Error ? error.message : "Error deleting product",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top"
+      });
     }
   };
 

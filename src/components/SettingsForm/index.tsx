@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/config/supabase";
 import { SiteSettings } from "./types";
-import { useToast } from "@/hooks/useToast";
-import { SITE_STRINGS } from "../../constants";
+import { useToast } from "@chakra-ui/react";
+import { SITE_STRINGS } from "@/constants";
 import {
   Container,
   LoadingBox,
@@ -19,7 +19,7 @@ interface ISettingsForm {
 export function SettingsForm({ onSuccess }: ISettingsForm) {
   const [loading, setLoading] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
-  const { addToast } = useToast();
+  const toast = useToast();
   const [settings, setSettings] = useState<SiteSettings & { id?: string }>({
     title: "",
     subtitle: "",
@@ -39,7 +39,13 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
         .single();
 
       if (error) {
-        addToast(SITE_STRINGS.ERROR_LOADING_SETTINGS, "error");
+        toast({
+          title: SITE_STRINGS.ERROR_LOADING_SETTINGS,
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+          position: "top"
+        });
         throw error;
       }
       if (data) setSettings(data);
@@ -69,11 +75,23 @@ export function SettingsForm({ onSuccess }: ISettingsForm) {
         .eq("id", settings.id);
 
       if (error) throw error;
-      addToast(SITE_STRINGS.SETTINGS_UPDATED, "success");
+      toast({
+        title: SITE_STRINGS.SETTINGS_UPDATED,
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top"
+      });
       onSuccess();
     } catch (error) {
       console.error("Error:", error);
-      addToast(SITE_STRINGS.ERROR_UPDATING_SETTINGS, "error");
+      toast({
+        title: SITE_STRINGS.ERROR_UPDATING_SETTINGS,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top"
+      });
     } finally {
       setLoading(false);
     }

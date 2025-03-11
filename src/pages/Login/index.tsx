@@ -11,7 +11,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useAuth } from "@/hooks/useAuth";
-import { useToast } from "@/hooks/useToast";
+import { useToast } from "@chakra-ui/react";
 import { SITE_STRINGS } from "../../constants";
 
 export function Login() {
@@ -20,7 +20,7 @@ export function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const { signIn } = useAuth();
   const navigate = useNavigate();
-  const { addToast } = useToast();
+  const toast = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +28,13 @@ export function Login() {
 
     const { error } = await signIn(email, password);
     if (error) {
-      addToast(error.message, "error");
+      toast({
+        title: error.message,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top"
+      });
       setIsLoading(false);
       return;
     }

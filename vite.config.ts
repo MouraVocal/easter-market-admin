@@ -69,5 +69,6 @@ export default defineConfig(() => ({
       '@/hooks': path.resolve(__dirname, './src/hooks'),
       '@/types': path.resolve(__dirname, './src/types')
     }
-  }
+  },
+  base: '/easter-market-admin'
 }))

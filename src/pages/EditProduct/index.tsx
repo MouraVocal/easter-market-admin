@@ -14,6 +14,8 @@ export function EditProduct() {
   const [loading, setLoading] = useState(true);
   const toast = useToast();
 
+  console.log(id);
+
   useEffect(() => {
     const loadProduct = async () => {
       try {

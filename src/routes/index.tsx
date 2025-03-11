@@ -54,11 +54,15 @@ export function AppRoutes({
                 productContent={productContent}
                 productListContent={productListContent}
                 settingsContent={<SettingsForm onSuccess={onProductSuccess} />}
-              >
-                <Routes>
-                  <Route path="/edit/:id" element={<EditProduct />} />
-                </Routes>
-              </AdminLayout>
+              />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <RequireAuth>
+              <EditProduct />
             </RequireAuth>
           }
         />

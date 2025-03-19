@@ -5,6 +5,7 @@ import { AdminLayout } from "@/components/AdminLayout";
 import { ProductList } from "@/components/ProductList";
 import { ProductForm } from "@/components/ProductForm";
 import { SettingsForm } from "@/components/SettingsForm";
+import { OrderList } from "@/components/OrderList";
 import { EditProduct } from "@/pages/EditProduct";
 import { Box } from "@chakra-ui/react";
 import { Product } from "@/types";
@@ -53,6 +54,7 @@ export function AppRoutes({
                 setTabIndex={setTabIndex}
                 productContent={productContent}
                 productListContent={productListContent}
+                ordersContent={<OrderList />}
                 settingsContent={<SettingsForm onSuccess={onProductSuccess} />}
               />
             </RequireAuth>

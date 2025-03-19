@@ -23,6 +23,7 @@ interface AdminLayoutProps extends React.PropsWithChildren {
   productContent: ReactNode;
   productListContent: ReactNode;
   settingsContent: ReactNode;
+  ordersContent?: ReactNode;
 }
 
 export function AdminLayout({
@@ -31,6 +32,7 @@ export function AdminLayout({
   productContent,
   productListContent,
   settingsContent,
+  ordersContent,
 }: AdminLayoutProps) {
   const { signOut } = useAuth();
   const navigate = useNavigate();
@@ -72,6 +74,7 @@ export function AdminLayout({
         <TabList>
           <Tab>{SITE_STRINGS.REGISTERED_PRODUCTS}</Tab>
           <Tab>{SITE_STRINGS.REGISTER_PRODUCT}</Tab>
+          <Tab>{SITE_STRINGS.ORDERS}</Tab>
           <Tab>{SITE_STRINGS.SETTINGS}</Tab>
         </TabList>
 
@@ -85,6 +88,12 @@ export function AdminLayout({
           <TabPanel px={[2, 4]} py={4}>
             <VStack spacing={6} align="stretch">
               {productContent}
+            </VStack>
+          </TabPanel>
+
+          <TabPanel px={[2, 4]} py={4}>
+            <VStack spacing={6} align="stretch">
+              {ordersContent}
             </VStack>
           </TabPanel>
 

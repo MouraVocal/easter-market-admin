@@ -21,6 +21,9 @@ export const SITE_STRINGS = {
   ERROR_LOADING_PRODUCT: "Erro ao carregar produto",
   ERROR_DELETING_PRODUCT: "Erro ao excluir produto",
 
+  // Orders
+  ORDERS: "Pedidos",
+
   // Settings
   SETTINGS: "Configurações",
   SITE_SETTINGS: "Configurações do Site",
